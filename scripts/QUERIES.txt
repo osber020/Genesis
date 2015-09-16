@@ -1,0 +1,82 @@
+/*put_song*/
+UPDATE dj
+SET songHash = '99edbaee4a0b7f4b38678503ac09f87a'
+WHERE sessionID = '65db942765acd5df8f82946669b8be0e';
+
+/*put_dj*/
+INSERT INTO dj
+VALUES(userHash, xlocation, zlocation, xMax, xMin, zMax, zMin,
+numListners, sessionID, songHash, handle, score);
+       
+/*put_profile*/
+INSERT INTO profiles
+VALUES (userHash, bio, allTimeScore, maxListeners, handle);
+
+/*put_listner*/
+INSERT INTO listener
+VALUES (userHash, xlocation, zlocation, sessionID);
+
+/*put_score*/
+UPDATE dj
+SET score = score +'input'
+WHERE sessionID = 'input';
+
+
+/*update location dj*/
+UPDATE dj 
+SET xlocation = ' ', zlocation = ' ', xMax = ' ', xMin = ' ', zMax = ' ', zMin = ' '
+WHERE userHash = ' ';
+
+/*update location listener*/
+UPDATE listener 
+SET xlocation = ' ', zlocation = ' '
+WHERE userHash = ' ';
+
+
+
+/*get_profiles*/
+SELECT *
+FROM profiles
+WHERE userHash = '4f1f0e89dd4269bdca4c525751f2066a';
+
+/*get_DJ_for_listner*/
+UPDATE listener 
+SET xlocation = ' ', zlocation = ' '
+WHERE userHash = ' ';
+SELECT A.handle, A.numListeners, A.songHash, A.sessionID
+FROM dj AS A, listener AS B
+WHERE B.xlocation>A.xMin and B.xlocation<A.xMax and B.zlocation>A.zMin and B.zlocation<A.zMax and B.userHash = '9de68fc09f724d1af4ee6b5cf1d6a485'
+GROUP BY(A.sessionID)
+ORDER BY A.numListeners DESC
+LIMIT 20
+OFFSET 0;
+
+/*get_DJ_for_dj*/
+SELECT numListeners, sessionID, score
+FROM dj
+WHERE userHash = '4f1f0e89dd4269bdca4c525751f2066a';
+
+/*get_top_DJ*/
+SELECT A.handle, C.allTimeScore, A.sessionID
+FROM dj AS A, listener AS B, profiles as C
+WHERE A.userHash = C.userHash and B.xlocation>A.xMin and B.xlocation<A.xMax and B.zlocation>A.zMin and B.zlocation<A.zMax and B.userHash = '9de68fc09f724d1af4ee6b5cf1d6a485'
+ORDER BY C.allTimeScore desc
+LIMIT 30;
+
+/*get_listeners_and_score*/
+UPDATE dj
+SET numListeners = 
+	(SELECT COUNT(distinct userHash)
+	 FROM listener
+	 WHERE sessionID = '94a5aa2ee4bb964eff4030662d811cb0')
+
+WHERE sessionID = '94a5aa2ee4bb964eff4030662d811cb0'; 
+
+SELECT numListeners, score
+FROM dj
+WHERE sessionID = '94a5aa2ee4bb964eff4030662d811cb0';
+
+/*get_song*/
+SELECT songHash
+FROM dj
+WHERE sessionID = '94a5aa2ee4bb964eff4030662d811cb0';

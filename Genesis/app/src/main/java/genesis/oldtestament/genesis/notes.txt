@@ -1,0 +1,31 @@
+5/24 Notes and thoughts (very scattered)
+
+	-We need to make interfaces:
+		-Database, spotify (exists mostly, we can maybe make our own that uses it?), general app interfaces
+		-I want to easily be able to interact with the database for testing and the likes, so we should
+		 also maybe add a testing suite of sorts for the database
+
+	-Need to decide on whether or not we need our own profile management,
+	 if so how to go about that; or whether spotify on its own is enough
+
+
+
+
+
+-Features:
+	-Add Log-Out button / disconnect from spotify button; see another app that ties together spotify for example
+	-If we are using our own account management system, adding similar management
+
+-To research:
+	-Interface design with android apps, how to do it in a good clean manner, whether or not that is good design practice or not
+	 in android
+
+
+MODEL objects:
+
+	To be created and changed for each "station" you are listening to
+	-Now Playing (DJ, Track, current location in track, playlist, etc)
+	-DJ
+	-User
+	-Track
+	-Playlist (current)

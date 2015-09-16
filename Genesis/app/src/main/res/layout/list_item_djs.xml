@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:padding="6dip" >
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="6dip"
+        android:contentDescription="TODO"
+        />
+    
+    <TextView
+        android:id="@+id/numListeners"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:text="Description"
+        android:textSize="18sp"
+        android:textColor="#5882FA"
+        android:layout_alignBottom="@+id/icon"
+        android:layout_alignRight="@+id/list_item_djs_textview"
+        android:layout_alignEnd="@+id/list_item_djs_textview" />
+    <TextView
+        android:id="@+id/currentTrack"
+        android:layout_width="fill_parent"
+        android:layout_height="26dip"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:text="Placeholder For Current Track"
+        android:textSize="16sp"
+        android:textColor="#3ADF00"
+        android:layout_alignTop="@+id/numListeners"
+        android:layout_alignBottom="@+id/icon"
+        android:layout_toLeftOf="@+id/numListeners"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    
+    <TextView
+        android:id="@+id/list_item_djs_textview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignWithParentIfMissing="true"
+        android:gravity="center_vertical"
+        android:text="Example application"
+        android:textSize="16sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="207dp" />
+
+
+</RelativeLayout>

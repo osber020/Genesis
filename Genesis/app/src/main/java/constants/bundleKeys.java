@@ -1,0 +1,10 @@
+package constants;
+
+/**
+ * Created by John Osberg on 5/25/2015.
+ *
+ */
+public enum bundleKeys {
+    RESPONSE_TYPE, RESPONSE_ACCESS_TOKEN, CLIENT_ID, LATITUDE, LONGITUDE, ARTIST,
+    TRACK_NAME, ALBUM, SPOTIFY_TOKENS, SONG_HASH, LIST_DJ, LIST_NUM_LISTENERS, LIST_PLAYINGTRACKS
+}
